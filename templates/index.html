@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <title>Blog Post</title>
+  </head>
+  <body>
+
+    <ul><a href="/add_blog"> Add Blog </a></ul>
+    
+      <h1>This is the homepage for this website.</h1>
+      {% for blog in blogs %}
+      <div class="blogs">
+         <h2>{{ blog.title }}</h2>
+            <p>{{ blog.content }}</p>
+            <button>
+                <a href="/edit_blog/{{blog.id}}">Edit Blog</a>
+            </button>
+
+            <button>
+                <a href="/delete_blog/{{blog.id}}">Delete Blog</a>
+            </button>
+        </div>
+        {% endfor %}
+  </body>
+</html>
